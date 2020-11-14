@@ -1,5 +1,5 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
-source ~/.dotfiles/antigen.zsh
+source ~/dotfiles/antigen.zsh
 antigen use oh-my-zsh
 
 # plugins
@@ -31,7 +31,10 @@ alias dc=docker-compose
 alias dcud="docker-compose down && docker-compose up -d"
 
 # editor
-export EDITOR=vim
+alias vim=nvim
+alias vi=nvim
+export EDITOR=nvim
+
 
 # kubernetes
 # if [ kubectl ]; then source <(kubectl completion zsh); fi
@@ -47,34 +50,15 @@ export PATH=$PATH:$HOME/.poetry/bin:~/bin
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
 
-# misc
-#alias vpn=~/.vpn/vpn-connect.sh
-alias gll="git checkout latest&& git pull && git checkout -"
-alias vim=nvim
-alias vi=nvim
-
-alias vpn=~/.vpn/vpn-connect.sh
-
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH="$(pyenv root)/shims:$PATH"
 
 # weird macos fix
-export LC_ALL=en_US.UTF-8
-
-# okta aws cli
-if [[ -f "$HOME/.okta/bash_functions" ]]; then
-    . "$HOME/.okta/bash_functions"
-fi
-if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
-    PATH="$HOME/.okta/bin:$PATH"
-fi
-
+# export LC_ALL=en_US.UTF-8 # todo make mac only
 
 # gnu utils mac only:
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # todo make mac only
 
-alias j12="export JAVA_HOME=`/usr/libexec/java_home -v 12`; java -version"
-alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# alias j12="export JAVA_HOME=`/usr/libexec/java_home -v 12`; java -version"
+# alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
