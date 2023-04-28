@@ -1,5 +1,5 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
-source ~/.dotfiles/antigen.zsh
+source ~/dotfiles/antigen.zsh
 antigen use oh-my-zsh
 
 # plugins
